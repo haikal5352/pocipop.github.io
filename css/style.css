@@ -16,7 +16,6 @@ body {
   font-family: "poppins", sans-serif;
   background-color: var(--bg);
   color: #fff;
-  min-height: 5000px;
 }
 /* navbar */
 .navbar {
@@ -186,7 +185,8 @@ body {
   margin-bottom: 2rem;
 }
 
-.menu p, .contact p {
+.menu p,
+.contact p {
   text-align: center;
   max-width: 30rem;
   margin: auto;
@@ -249,7 +249,7 @@ body {
 
 .contact .row .map {
   flex: 1 1 45rem;
-  width: 100%; 
+  width: 100%;
   height: 100%; /* Tambahkan ini */
   min-height: 400px; /* Opsional: tetapkan tinggi minimum */
   object-fit: cover;
@@ -260,9 +260,9 @@ body {
 .contact .row {
   display: flex;
   margin-top: 2rem;
-  border: 1px solid #b9b5b5; 
-  padding: 1rem; 
-  border-radius: 5px; 
+  border: 1px solid #b9b5b5;
+  padding: 1rem;
+  border-radius: 5px;
   gap: 1rem;
   flex-wrap: wrap;
   align-items: stretch; /* Tambahkan ini */
@@ -277,7 +277,35 @@ body {
   cursor: pointer;
 }
 
+footer {
+  background-color: var(--primary);
+  text-align: center;
+  padding: 1rem 0;
+  padding-top: 3rem;
+}
 
+footer .socials {
+  padding: 1rem 0;
+}
+
+footer .socials a {
+  color: #fff;
+  margin: 1rem;
+}
+
+footer .socials a:hover,
+footer .links a:hover {
+  color: var(--bg);
+}
+
+footer .links {
+  margin-bottom: 1, 4rem;
+}
+
+footer .links a {
+  color: #fff;
+  padding: 2rem 1rem;
+}
 /* media queries */
 
 /* laptop */
