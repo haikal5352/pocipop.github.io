@@ -16,7 +16,7 @@ body {
   font-family: "poppins", sans-serif;
   background-color: var(--bg);
   color: #fff;
-  min-height: 3000px;
+  min-height: 5000px;
 }
 /* navbar */
 .navbar {
@@ -137,19 +137,25 @@ body {
 
 /* about section */
 .about,
-.menu {
+.menu,
+.contact {
   padding: 8rem 7% 1.4rem;
 }
+
 .about h2,
-.menu h2 {
+.menu h2,
+.contact h2 {
   text-align: center;
   font-size: 2.6rem;
   margin-bottom: 3rem;
 }
+
 .about h2 span,
-.menu h2 span {
+.menu h2 span,
+.contact h2 span {
   color: var(--primary);
 }
+
 .about .row {
   display: flex;
 }
@@ -180,7 +186,7 @@ body {
   margin-bottom: 2rem;
 }
 
-.menu p {
+.menu p, .contact p {
   text-align: center;
   max-width: 30rem;
   margin: auto;
@@ -212,6 +218,65 @@ body {
 .menu .row .menu-card .menu-card-title {
   margin: 1rem 0 0.5rem;
 }
+
+/* contact section */
+
+.contact .row form {
+  flex: 1 1 45rem;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.contact .row form .input_group {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  background-color: var(--bg);
+  border: 1px solid #eee;
+  padding-left: 2rem;
+}
+
+.contact .row form .input_group input {
+  width: 100%; /* Membuat input memanjang */
+  padding: 1rem;
+  background: transparent;
+  color: #fff;
+}
+
+.contact .row form .input_group i {
+  margin-right: 1rem;
+}
+
+.contact .row .map {
+  flex: 1 1 45rem;
+  width: 100%; 
+  height: 100%; /* Tambahkan ini */
+  min-height: 400px; /* Opsional: tetapkan tinggi minimum */
+  object-fit: cover;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.contact .row {
+  display: flex;
+  margin-top: 2rem;
+  border: 1px solid #b9b5b5; 
+  padding: 1rem; 
+  border-radius: 5px; 
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: stretch; /* Tambahkan ini */
+}
+
+.contact .row form .btn {
+  width: 100%; /* Membuat tombol memanjang */
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: var(--primary);
+  color: #fff;
+  cursor: pointer;
+}
+
 
 /* media queries */
 
