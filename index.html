@@ -11,24 +11,33 @@
     <link rel="stylesheet" href="https://cdnj.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <!-- link menuju css -->
     <link rel="stylesheet" href="css/style.css" />
-
+     <!--Alpine js-->
+     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+     <!-- App js-->
+      <script src="src/app.js"></script>
     <!-- feather icons -->
     <script src="https://unpkg.com/feather-icons"></script>
   </head>
   <body>
     <!-- header section mulai -->
-    <nav class="navbar">
+    <nav class="navbar" x-data>
       <a href="#" class="navbar-logo">poci<span>pop</span>.</a>
 
       <div class="navbar-nav">
         <a href="#">home</a>
         <a href="#about">about</a>
         <a href="#menu">menu</a>
+        <a href="#products">products</a>
         <a href="#contact">contact</a>
       </div>
+      
       <div class="icons">
         <a href="#" id="search-button"><i data-feather="search"></i></a>
-        <a href="#" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
+        <a href="#" id="shopping-cart-button">
+          <i data-feather="shopping-cart"></i>
+          <span class="quantity-badge" x-show="$store.cart.quantity"
+          x-text="$store.cart.quantity"></span>
+        </a>
         <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
       </div>
       <!-- search form start -->
@@ -36,6 +45,24 @@
         <input type="search" id="search-box" placeholder="search here...">
         <label for="search-box"><i data-feather="search"></i></label>
        </div>
+        
+       <!-- shopping cart start-->
+        <div class="shopping-cart">
+          <div class="cart-item">
+            <img src="img/biji kopi.jpg" alt="product 1">
+            <div class="item-detail">
+              <h3>Product 1</h3>
+              <div class="item-price">
+                <span>Rp 35.000</span>&times;
+                <button id="remove">&minus;</button>
+                <span>1</span>
+                <button id="add">&plus;</button> &equals;
+                <span>Rp 35.000</span>
+              </div>
+            </div>
+         </div>
+        </div>
+
     </nav>
 
         <!-- header section akhir -->
@@ -71,7 +98,7 @@
     <!-- awal menu -->
     <section id="menu" class="menu">
       <h2><span>Menu</span> Kami</h2>
-      <p>kami menyediakan beragam varian menu copi, banyak pilihan coffe yang dapat anda nikmati. Berikut menu yang di tampikan....</p>
+      <p>kami menyediakan beragam varian menu kopi, banyak pilihan coffe yang dapat anda nikmati. Berikut menu yang di tampikan....</p>
       <div class="row">
         <div class="menu-card">
           <img src="img/menu 1.jpg" alt="latte" class="menu-card-img" />
@@ -97,6 +124,113 @@
     </section> 
     </body>
     <!-- menu section end-->
+
+     <!--product section awal-->
+    <section class="products" id="products" x-data="products" >
+      <h2><span>produk jagoan</span> kami</h2>
+      <p>produk kami merupakan biji berbahan unggulan,</p>
+      <p> yang berkualitas tinggi. nikmati perbedaan rasanya.</p>
+
+      <div class="row">
+        <template x-for="(item, index) in items" x-key="index">
+        <div class="products-card">
+          <div class="products-icons">
+            <a href="#" @click.prevent="$store.cart.add(item)">
+              <svg
+              width="24"
+              height="24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <use href="img/feather-sprite.svg#shopping-cart" />
+            </svg>
+          </a>
+            <a href="#" class="item-detail-button">
+              <svg
+              width="24"
+              height="24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+            <use href="img/feather-sprite.svg#eye" />
+            </svg>
+            </a>
+          </div>
+          <div class="product-image">
+            <img :src="`img/products/${item.img}`" :alt="item.name">
+          <div class="product-content">
+            <h3 x-text="item.name"></h3>
+            <div class="product-stars">
+              <svg
+              width="24"
+              height="24"
+              fill="currentColor"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+            <use href="img/feather-sprite.svg#star" />
+            </svg>
+            <svg
+              width="24"
+              height="24"
+              fill="currentColor"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+            <use href="img/feather-sprite.svg#star" />
+            </svg>
+            <svg
+              width="24"
+              height="24"
+              fill="currentColor"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+            <use href="img/feather-sprite.svg#star" />
+            </svg>
+            <svg
+              width="24"
+              height="24"
+              fill="currentColor"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+            <use href="img/feather-sprite.svg#star" />
+            </svg>
+            <svg
+              width="24"
+              height="24"
+              fill="currentColor"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+            <use href="img/feather-sprite.svg#star" />
+            </svg>
+            </div>
+            <div class="product-price"><span x-text="rupiah(item.price)"></span></div>
+          </div>
+        </template>
+        </div>
+       
+        </div>
+      </div>
+    </section>
 
     <!--contact section start-->
     <section id="contact" class="contact">
@@ -125,7 +259,8 @@
       </div> 
     </section>      
     <!-- contact section end -->
-
+    
+    <!-- foter icons-->
     <footer>
       <div class="socials">
         <a href="#"><i data-feather="instagram"></i></a>
@@ -141,15 +276,39 @@
       </div>
 <div class="credit">
   <p>Createdby<span>Aidahmarchtiana</span>haikalputra</p>
-</div>
-       
+</div> 
     </footer>
-    <!-- father icons -->
+
+    <!-- modal box detail start -->
+     <div class="modal" id="item-detail-modal">
+      <div class="modal-container">
+        <a href="#" class="close-icon"><i data-feather="x"></i></a>
+        <div class="modal-content">
+          <div class="modal-content">
+          <img src="img/biji kopi.jpg" alt="product 1">
+          <div class="product-content">
+          <h3>product 1</h3>
+          <p> kopi yang berkualitas tinggi, di olah menggunakan bahan terpercaya. pastinya berpengaruh pada rasa yang otentic</p>
+          <div>
+            <div class="product-stars">
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star"></i>
+            <div class="product-price">IDR 35K <span>IDR 50K</span></div>
+            <a href="#"><i data-feather="shopping-cart"></i> <span>add to cart</span></a>
+        </div >
+      </div>
+     </div>
+    </div>
     <script>
       feather.replace();
     </script>
+
     <!-- my js --> 
     <script src="js/script.js"></script>
   </body>
+  
 </html>
   
