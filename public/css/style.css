@@ -425,63 +425,135 @@ body {
 .products .row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-  gap: 1.5rem;
+  gap: 3rem;
   margin-top: 4rem;
-}
-
-.products .products-card {
-  text-align: center;
-  border: 1px solid #666;
   padding: 2rem;
 }
 
-.products .products-icons {
-  display: flex;
-  justify-content: center;
-  gap: 0, 5rem;
+.products-card {
+  perspective: 1000px;
+  height: 400px;
+  margin: 1rem;
 }
 
-.products .products-icons a {
-  width: 4rem;
-  height: 4rem;
-  color: #fff;
-  margin: 0, 3rem;
-  border-radius: 50%;
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.products-card.is-flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.products-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  position: absolute;
+  top: 3.5rem;
+  left: 0;
+  right: 0;
+  z-index: 3;
+}
+
+.product-image {
+  margin-top: 4.5rem;
+  width: 100%;
+  height: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
-.products .products-icons a:hover {
-  background-color: var(--primary);
-  border: 1px solid var(--primary);
+.product-image img {
+  width: 90%;
+  height: 220px;
+  object-fit: contain;
+  transition: transform 0.3s;
 }
 
-.products .product-image {
-  padding: 1rem 0;
-}
-
-.products .product-image img {
-  height: 25rem;
+.product-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
 }
 
 .products .product-content h3 {
-  font-size: 2rem;
+  font-size: 1.8rem;
+  margin: 0;
+  text-align: center;
 }
 
 .products .product-stars {
   font-size: 1.7rem;
-  padding: 0.8rem;
+  padding: 0;
   color: var(--primary);
-}
-
-.products .product-stars .star-full {
-  fill: var(--primary);
+  display: flex;
+  justify-content: center;
+  gap: 0.2rem;
 }
 
 .products .product-price {
   font-size: 1.3rem;
   font-weight: bold;
+  margin: 0;
+  text-align: center;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.coffee-level {
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.description {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.flip-back-btn {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem auto 0;
+  transition: 0.3s;
+}
+
+.flip-back-btn:hover {
+  background: #8b444a;
 }
 
 /* contact section */
