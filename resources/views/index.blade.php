@@ -195,7 +195,47 @@
           <h3 class="menu-card-title">- LATTE -</h3>
           <p class="menu-card-price">IDR. 18K</p>
         </div>
-      </div>
+        <div class="menu-card">
+          <img src="img/menu 1.jpg" alt="latte" class="menu-card-img" />
+          <h3 class="menu-card-title">- LATTE -</h3>
+          <p class="menu-card-price">IDR. 18K</p>
+        </div>
+        <div class="menu-card">
+          <img src="img/menu 1.jpg" alt="latte" class="menu-card-img" />
+          <h3 class="menu-card-title">- LATTE -</h3>
+          <p class="menu-card-price">IDR. 18K</p>
+        </div>
+        <div class="menu-card">
+          <img src="img/menu 1.jpg" alt="latte" class="menu-card-img" />
+          <h3 class="menu-card-title">- LATTE -</h3>
+          <p class="menu-card-price">IDR. 18K</p>
+        </div>
+        <div class="menu-card">
+          <img src="img/menu 1.jpg" alt="latte" class="menu-card-img" />
+          <h3 class="menu-card-title">- LATTE -</h3>
+          <p class="menu-card-price">IDR. 18K</p>
+        </div>
+        <div class="menu-card">
+          <img src="img/menu 1.jpg" alt="latte" class="menu-card-img" />
+          <h3 class="menu-card-title">- LATTE -</h3>
+          <p class="menu-card-price">IDR. 18K</p>
+        </div>
+        <div class="menu-card">
+          <img src="img/menu 1.jpg" alt="latte" class="menu-card-img" />
+          <h3 class="menu-card-title">- LATTE -</h3>
+          <p class="menu-card-price">IDR. 18K</p>
+        </div>
+        <div class="menu-card">
+          <img src="img/menu 1.jpg" alt="latte" class="menu-card-img" />
+          <h3 class="menu-card-title">- LATTE -</h3>
+          <p class="menu-card-price">IDR. 18K</p>
+        </div>
+        <div class="menu-card">
+          <img src="img/menu 1.jpg" alt="latte" class="menu-card-img" />
+          <h3 class="menu-card-title">- LATTE -</h3>
+          <p class="menu-card-price">IDR. 18K</p>
+        </div>
+</div>
     </section> 
     </body>
     <!-- menu section end-->
